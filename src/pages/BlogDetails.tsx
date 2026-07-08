@@ -6,7 +6,7 @@ import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
 const blogPosts = [
   {
     id: 1,
-    image: "/blog-1.png",
+    image: "/images/focus-preview.png",
     date: "SEP 25, 2023",
     readTime: "3 MIN READ",
     author: "Jane Doe",
@@ -24,7 +24,7 @@ const blogPosts = [
   },
   {
     id: 2,
-    image: "/blog-2.png",
+    image: "/images/inkdrop-preview.png",
     date: "SEP 25, 2023",
     readTime: "4 MIN READ",
     author: "John Smith",
@@ -41,7 +41,7 @@ const blogPosts = [
   },
   {
     id: 3,
-    image: "/blog-3.png",
+    image: "/images/pennypilot-preview.png",
     date: "SEP 25, 2023",
     readTime: "2 MIN READ",
     author: "Alice Wong",
@@ -68,7 +68,9 @@ const BlogDetails = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Post not found</h1>
-          <Link to="/" className="text-brand-green hover:underline">Return Home</Link>
+          <Link to="/" className="text-brand-green hover:underline">
+            Return Home
+          </Link>
         </div>
       </div>
     );
@@ -77,15 +79,18 @@ const BlogDetails = () => {
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Article Header */}
       <article className="pt-32 pb-24">
         <div className="max-w-[900px] mx-auto px-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-black/50 hover:text-black mb-10 transition-colors">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-sm font-medium text-black/50 hover:text-black mb-10 transition-colors"
+          >
             <ArrowLeft size={16} />
             Back to home
           </Link>
-          
+
           <div className="flex items-center gap-6 mb-6">
             <div className="flex items-center gap-2 text-[11px] font-bold text-black/40 tracking-wider">
               <Calendar size={14} />
@@ -106,9 +111,9 @@ const BlogDetails = () => {
           </h1>
 
           <div className="aspect-[21/9] rounded-[32px] overflow-hidden mb-16 shadow-2xl">
-            <img 
-              src={post.image} 
-              alt={post.title} 
+            <img
+              src={post.image}
+              alt={post.title}
               className="w-full h-full object-cover shadow-inner"
             />
           </div>
@@ -121,8 +126,11 @@ const BlogDetails = () => {
           {/* Tags/Footer of article */}
           <div className="mt-16 pt-10 border-t border-black/5 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              {["Design", "Business", "Product"].map(tag => (
-                <span key={tag} className="text-xs font-bold px-4 py-2 bg-black/5 rounded-full hover:bg-black/10 cursor-pointer transition-colors">
+              {["Design", "Business", "Product"].map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs font-bold px-4 py-2 bg-black/5 rounded-full hover:bg-black/10 cursor-pointer transition-colors"
+                >
                   {tag}
                 </span>
               ))}

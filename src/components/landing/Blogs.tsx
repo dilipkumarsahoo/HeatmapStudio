@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 const blogPosts = [
   {
     id: 1,
-    image: "/blog-1.png",
+    image: "/images/focus-preview.png",
     date: "APR 26, 2024",
     readTime: "3 MIN READ",
     title: "Mastering the ATS: How to Build a Resume that Gets Interviews",
   },
   {
     id: 2,
-    image: "/blog-2.png",
+    image: "/images/inkdrop-preview.png",
     date: "APR 20, 2024",
     readTime: "5 MIN READ",
     title: "The Simple Guide to Taking Notes that Actually Stick",
   },
   {
     id: 3,
-    image: "/blog-3.png",
+    image: "/images/pennypilot-preview.png",
     date: "APR 15, 2024",
     readTime: "4 MIN READ",
     title: "5 Financial Habits for Freelancers to Manage Budgets Better",
@@ -40,7 +40,11 @@ const Blogs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {blogPosts.map((post) => (
-            <Link key={post.id} to={`/blog/${post.id}`} className="group cursor-pointer block">
+            <Link
+              key={post.id}
+              to={`/blog/${post.id}`}
+              className="group cursor-pointer block"
+            >
               <div className="relative aspect-[4/3] rounded-[24px] overflow-hidden mb-6">
                 <img
                   src={post.image}
@@ -57,7 +61,9 @@ const Blogs = () => {
                 {post.title}
               </h3>
               <div className="flex items-center justify-between border-t border-black/5 pt-6 group">
-                <span className="text-sm font-bold text-[#111]">Read Story</span>
+                <span className="text-sm font-bold text-[#111]">
+                  Read Story
+                </span>
                 <div className="w-6 h-6 flex items-center justify-center rounded-full bg-black/5 group-hover:bg-black group-hover:text-white transition-all">
                   <ArrowRight size={14} />
                 </div>
